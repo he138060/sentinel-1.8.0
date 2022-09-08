@@ -26,16 +26,19 @@ public class WindowWrap<T> {
 
     /**
      * Time length of a single window bucket in milliseconds.
+     * 窗口长度
      */
     private final long windowLengthInMs;
 
     /**
      * Start timestamp of the window in milliseconds.
+     * 计算该窗口的理论开始时间
      */
     private long windowStart;
 
     /**
      * Statistic data.
+     * data数据
      */
     private T value;
 
@@ -68,6 +71,7 @@ public class WindowWrap<T> {
 
     /**
      * Reset start timestamp of current bucket to provided time.
+     * 复位该时间窗口
      *
      * @param startTime valid start timestamp
      * @return bucket after reset
@@ -79,6 +83,7 @@ public class WindowWrap<T> {
 
     /**
      * Check whether given timestamp is in current bucket.
+     * 判断是否该时间在该窗口内
      *
      * @param timeMillis valid timestamp in ms
      * @return true if the given time is in current bucket, otherwise false

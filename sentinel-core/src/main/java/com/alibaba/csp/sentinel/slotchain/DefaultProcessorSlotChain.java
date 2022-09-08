@@ -37,6 +37,15 @@ public class DefaultProcessorSlotChain extends ProcessorSlotChain {
         }
 
     };
+    /**
+     * 责任链的实现解惑：https://gitee.com/all_4_you/sentinel-tutorial/blob/master/sentinel-principle/sentinel-overall-introduce/sentinel-overall-introduce.md
+     * 1.一开始 first end 对应的是同一个对象
+     * 2.addLast 中 end.setNext(protocolProcessor) ，first中的next 也会一起改变
+     * 3.end = protocolProcessor ,改变DefaultProcessorSlotChain end节点为最后的，first中最后一个next也会跟着变
+     * 4.first中的next，如此循环变成循环链路
+     *
+     */
+
     AbstractLinkedProcessorSlot<?> end = first;
 
     @Override
