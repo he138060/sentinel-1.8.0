@@ -18,6 +18,7 @@ package com.alibaba.csp.sentinel.slotchain;
 import com.alibaba.csp.sentinel.context.Context;
 
 /**
+ *
  * @author qinan.qn
  * @author jialiang.linjl
  */
